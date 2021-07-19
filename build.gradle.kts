@@ -1,6 +1,7 @@
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 val zirconVersion: String by project
+val amethystVersion: String by project
 val slf4jVersion: String by project
 val junitVersion: String by project
 val mockitoVersion: String by project
@@ -29,6 +30,8 @@ dependencies {
 
     implementation("org.hexworks.zircon:zircon.core-jvm:$zirconVersion")
     implementation("org.hexworks.zircon:zircon.jvm.swing:$zirconVersion")
+
+    implementation("org.hexworks.amethyst:amethyst.core-jvm:$amethystVersion")
 
     testImplementation("junit:junit:$junitVersion")
     testImplementation("org.mockito:mockito-all:$mockitoVersion")

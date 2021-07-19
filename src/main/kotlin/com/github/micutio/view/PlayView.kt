@@ -6,6 +6,7 @@ import com.github.micutio.core.GameConfig.SIDEBAR_WIDTH
 import com.github.micutio.core.GameConfig.WINDOW_WIDTH
 import com.github.micutio.core.GameTileRepository
 import com.github.micutio.world.Game
+import com.github.micutio.world.GameBuilder
 import org.hexworks.cobalt.databinding.api.extension.toProperty
 import org.hexworks.zircon.api.ComponentDecorations.box
 import org.hexworks.zircon.api.Components
@@ -18,7 +19,7 @@ import org.hexworks.zircon.internal.game.impl.GameAreaComponentRenderer
 
 class PlayView(
     private val grid: TileGrid,
-    private val game: Game = Game.create(),
+    private val game: Game = GameBuilder.create(),
     theme: ColorTheme = GameConfig.THEME
 ) : BaseView(grid, theme) {
 

@@ -1,20 +1,21 @@
 package com.github.micutio.world
 
-import com.github.micutio.builders.WorldBuilder
-import com.github.micutio.core.GameConfig
-import org.hexworks.zircon.api.data.Size3D
+import com.github.micutio.attributes.types.Player
+import com.github.micutio.extensions.GameEntity
 
-class Game(val world: World) {
+class Game(
+    val world: World,
+    val player: GameEntity<Player>
+) {
 
     companion object {
 
         fun create(
-            worldSize: Size3D = GameConfig.WORLD_SIZE,
-            visibleSize: Size3D = GameConfig.GAME_AREA_SIZE
+            player: GameEntity<Player>,
+            world: World
         ) = Game(
-            WorldBuilder(worldSize)
-                .makeCaves()
-                .build(visibleSize)
+            world = world,
+            player = player
         )
 
     }
